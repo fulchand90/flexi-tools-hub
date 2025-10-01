@@ -14,33 +14,33 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-card border-b border-border shadow-sm">
+    <nav className="sticky top-0 z-50 bg-card/80 backdrop-blur-xl border-b border-border shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-xl animate-glow">
               <span className="text-primary-foreground font-bold text-xl">FT</span>
             </div>
-            <span className="font-bold text-xl text-foreground hidden sm:block">FlexiTools</span>
+            <span className="font-bold text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hidden sm:block group-hover:scale-105 transition-transform duration-300">FlexiTools</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-1">
             <Link to="/">
-              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-muted">
+              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:scale-105 transition-all duration-300">
                 Home
               </Button>
             </Link>
             
             <div className="relative group">
-              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-muted">
+              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:scale-105 transition-all duration-300">
                 Categories
               </Button>
-              <div className="absolute left-0 mt-2 w-56 bg-card rounded-lg shadow-xl border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <div className="absolute left-0 mt-2 w-56 bg-card/95 backdrop-blur-xl rounded-xl shadow-2xl border border-primary/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden">
                 {categories.map((category) => (
                   <Link
                     key={category.name}
                     to={category.path}
-                    className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                    className="block px-4 py-3 text-sm text-foreground hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:text-primary hover:translate-x-2 transition-all duration-300"
                   >
                     {category.name}
                   </Link>
@@ -49,13 +49,13 @@ const Navbar = () => {
             </div>
 
             <Link to="/about">
-              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-muted">
+              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:scale-105 transition-all duration-300">
                 About
               </Button>
             </Link>
             
             <Link to="/contact">
-              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-muted">
+              <Button variant="ghost" className="text-foreground hover:text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:scale-105 transition-all duration-300">
                 Contact
               </Button>
             </Link>
